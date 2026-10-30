@@ -1,0 +1,98 @@
+---
+import { team } from '../config';
+import { useTranslations } from '../i18n';
+const t = useTranslations(Astro.currentLocale);
+const mail = `mailto:${team.email}`;
+---
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-copy">
+    <p class="tag">{t.hero.tag}</p>
+    <h1>{t.hero.titleLines.map((l) => <span>{l}</span>)}</h1>
+    <p class="lead">{t.hero.lead}</p>
+    <div class="actions">
+      <a class="btn" href="#sponsors">{t.hero.primaryCta}</a>
+      <a class="btn ghost" href="#results">{t.hero.secondaryCta}</a>
+    </div>
+  </div>
+  <dl class="hud">
+    {t.hero.hud.map((i) => <div><dt>{i.label}</dt><dd>{i.value}</dd></div>)}
+  </dl>
+</section>
+
+<section class="section" id="results">
+  <div class="wrap">
+    <p class="tag">{t.results.tag}</p>
+    <h2>{t.results.title}</h2>
+    <ul class="stats">
+      {t.results.items.map((i) => (
+        <li><strong>{i.value}</strong><span>{i.label}</span><em>{i.text}</em></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="robot">
+  <div class="wrap">
+    <p class="tag">{t.robot.tag}</p>
+    <h2>{t.robot.title}</h2>
+    <p class="lead">{t.robot.lead}</p>
+    <ul class="grid4">
+      {t.robot.stack.map((i) => <li><h3>{i.label}</h3><p>{i.text}</p></li>)}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="team">
+  <div class="wrap">
+    <p class="tag">{t.team.tag}</p>
+    <h2>{t.team.title}</h2>
+    <p class="lead">{t.team.lead}</p>
+    <ul class="grid3">
+      {t.team.members.map((m, i) => (
+        <li class:list={{ open: i > 0 }}><h3>{m.name}</h3><p>{m.role}</p></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="sponsors">
+  <div class="wrap">
+    <p class="tag">{t.sponsors.tag}</p>
+    <h2>{t.sponsors.title}</h2>
+    <p class="lead">{t.sponsors.lead}</p>
+    <ul class="grid3 tiers">
+      {t.sponsors.tiers.map((tier) => (
+        <li>
+          <h3>{tier.name}</h3>
+          <p class="amount">{t.sponsors.amountLabel}: {t.sponsors.amount}</p>
+          <ul class="perks">{tier.perks.map((p) => <li>{p}</li>)}</ul>
+        </li>
+      ))}
+    </ul>
+    <div class="actions"><a class="btn" href={mail}>{t.sponsors.cta}</a></div>
+  </div>
+</section>
+
+<section class="section" id="roadmap">
+  <div class="wrap">
+    <p class="tag">{t.roadmap.tag}</p>
+    <h2>{t.roadmap.title}</h2>
+    <ol class="steps">
+      {t.roadmap.steps.map((s) => <li><span>{s.status}</span><p>{s.text}</p></li>)}
+    </ol>
+  </div>
+</section>
+
+<section class="section center" id="contact">
+  <div class="wrap">
+    <p class="tag">{t.contact.tag}</p>
+    <h2 class="display">{t.contact.title}</h2>
+    <p class="lead">{t.contact.lead}</p>
+    <div class="actions">
+      <a class="btn" href={mail}>{team.email}</a>
+      <a class="btn ghost" href={team.tiktok} target="_blank" rel="noopener">TikTok</a>
+      {team.youtube && <a class="btn ghost" href={team.youtube} target="_blank" rel="noopener">YouTube</a>}
+    </div>
+  </div>
+</section>
