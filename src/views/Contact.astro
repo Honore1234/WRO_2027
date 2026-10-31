@@ -1,0 +1,30 @@
+---
+import { team } from '../config';
+import { useTranslations } from '../i18n';
+const all = useTranslations(Astro.currentLocale);
+const t = all.contact;
+const p = all.partners;
+---
+<section class="page-head dark center">
+  <div class="wrap">
+    <p class="tag">{t.tag}</p>
+    <h1>{t.title}</h1>
+    <p class="lead">{t.lead}</p>
+    <div class="actions">
+      <a class="btn" href={`mailto:${team.email}`}>{team.email}</a>
+      <a class="btn ghost" href={team.tiktok} target="_blank" rel="noopener">TikTok</a>
+      {team.youtube && <a class="btn ghost" href={team.youtube} target="_blank" rel="noopener">YouTube</a>}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap center">
+    <p class="tag">{p.tag}</p>
+    <h2>{p.title}</h2>
+    <ul class="logos">
+      {[1, 2, 3, 4, 5, 6].map(() => <li class="reveal">{p.slot}</li>)}
+    </ul>
+    <p class="lead">{p.text}</p>
+    <div class="actions"><a class="btn" href={`mailto:${team.email}`}>{all.sponsors.cta}</a></div>
+  </div>
+</section>

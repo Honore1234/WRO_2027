@@ -1,0 +1,40 @@
+---
+import { useTranslations, withBase } from '../i18n';
+const t = useTranslations(Astro.currentLocale);
+const r = t.robots;
+---
+<section class="page-head dark">
+  <div class="wrap">
+    <p class="tag">{r.tag}</p>
+    <h1>{r.title}</h1>
+    <p class="lead">{r.lead}</p>
+  </div>
+</section>
+<section class="zig">
+  {r.items.map((item, i) => (
+    <article class:list={['row', { soft: i % 2 === 1 }]}>
+      {i === 1 ? (
+        <div class="photo-grid reveal">
+          {r.gallery.map((g, n) => <div class="ph photo" data-label={g} style={`--img:url(${withBase(`robots/previous${n + 1}.jpg`)})`}></div>)}
+        </div>
+      ) : (
+        <div class="ph photo row-photo reveal" data-label={item.name} style={`--img:url(${withBase(`robots/robot${i + 1}.jpg`)})`}></div>
+      )}
+      <div class="row-body reveal">
+        <p class="tag">{item.status}</p>
+        <h2>{item.name}</h2>
+        <p class="lead">{item.text}</p>
+        <ul class="perks">{item.points.map((p) => <li>{p}</li>)}</ul>
+      </div>
+    </article>
+  ))}
+</section>
+<section class="section dark">
+  <div class="wrap">
+    <p class="tag">{t.process.tag}</p>
+    <h2>{t.process.title}</h2>
+    <ol class="process">
+      {t.process.steps.map((s, n) => <li class="reveal"><span>{String(n + 1).padStart(2, '0')}</span><h3>{s.title}</h3><p>{s.text}</p></li>)}
+    </ol>
+  </div>
+</section>

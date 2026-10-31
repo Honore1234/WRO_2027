@@ -1,0 +1,29 @@
+---
+import { team } from '../config';
+import { getLocale, localePath, locales, useTranslations } from '../i18n';
+const { current = '' } = Astro.props;
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale).nav;
+---
+<header class="nav" id="nav">
+  <a href={localePath(locale)} class="brand" aria-label={team.name}>
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-word">{team.name}</span>
+  </a>
+  <nav>
+    {t.links.map((l) => (
+      <a class="nav-link" href={localePath(locale, l.page)} aria-current={l.page === current ? 'page' : undefined}>{l.label}</a>
+    ))}
+    <span class="lang-switch" role="group" aria-label={t.switchLabel}>
+      {locales.map((l) => (
+        <a href={localePath(l, current)} hreflang={l} lang={l} aria-current={l === locale ? 'page' : undefined}>{l.toUpperCase()}</a>
+      ))}
+    </span>
+  </nav>
+</header>
+<script>
+  const nav = document.getElementById('nav');
+  const update = () => nav?.classList.toggle('is-solid', window.scrollY > 40);
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+</script>

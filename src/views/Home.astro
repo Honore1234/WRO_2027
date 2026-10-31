@@ -1,0 +1,82 @@
+---
+import { getLocale, localePath, useTranslations, withBase } from '../i18n';
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+const img = (p: string) => `--img:url(${withBase(p)})`;
+---
+<section class="hero dark">
+  <div class="hero-photo" style={img('media/hero.jpg')} aria-hidden="true"></div>
+  <div class="wrap hero-copy">
+    <p class="tag">{t.hero.tag}</p>
+    <h1>{t.hero.titleLines.map((l) => <span>{l}</span>)}</h1>
+    <p class="lead">{t.hero.lead}</p>
+    <div class="actions">
+      <a class="btn" href={localePath(locale, 'equipo')}>{t.hero.primaryCta}</a>
+      <a class="btn ghost" href={localePath(locale, 'patrocinio')}>{t.hero.secondaryCta}</a>
+    </div>
+  </div>
+  <dl class="hud3">
+    {t.hero.about.map((i) => <div><dt>{i.label}</dt><dd>{i.text}</dd></div>)}
+  </dl>
+</section>
+
+<section class="tiles">
+  {t.tiles.map((i) => (
+    <a class="tile photo" href={localePath(locale, i.page)} style={img(`media/${i.page}.jpg`)}>
+      <span class="tile-body"><h2>{i.title}</h2><p>{i.text}</p></span>
+    </a>
+  ))}
+</section>
+
+<section class="section">
+  <div class="wrap two">
+    <div class="reveal">
+      <p class="tag">{t.story.tag}</p>
+      <h2>{t.story.title}</h2>
+      <p class="lead">{t.story.text}</p>
+    </div>
+    <div class="ph photo reveal" data-label={t.story.label} style={img('media/story.jpg')}></div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <ul class="stats">
+      {t.stats.map((i) => <li class="reveal"><strong>{i.value}</strong><em>{i.label}</em></li>)}
+    </ul>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap">
+    <p class="tag">{t.journey.tag}</p>
+    <h2>{t.journey.title}</h2>
+    <ul class="journey">
+      {t.journey.items.map((i, n) => (
+        <li class="reveal">
+          <div class="ph photo" data-label={i.place} style={img(`media/journey${n + 1}.jpg`)}></div>
+          <p>{i.text}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap center">
+    <p class="tag">{t.partners.tag}</p>
+    <h2>{t.partners.title}</h2>
+    <ul class="logos">
+      {[1, 2, 3, 4].map(() => <li class="reveal">{t.partners.slot}</li>)}
+    </ul>
+    <p class="lead">{t.partners.text}</p>
+  </div>
+</section>
+
+<section class="section dark center cta">
+  <div class="wrap">
+    <h2 class="display">{t.cta.title}</h2>
+    <p class="lead">{t.cta.text}</p>
+    <div class="actions"><a class="btn" href={localePath(locale, 'patrocinio')}>{t.cta.button}</a></div>
+  </div>
+</section>

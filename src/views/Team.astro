@@ -1,0 +1,57 @@
+---
+import { getLocale, localePath, useTranslations, withBase } from '../i18n';
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+const photos = ['honore', 'santi', 'andres'];
+---
+<section class="page-head dark">
+  <div class="wrap">
+    <p class="tag">{t.team.tag}</p>
+    <h1>{t.team.title}</h1>
+    <p class="lead">{t.team.lead}</p>
+  </div>
+</section>
+
+{t.team.people.map((p, i) => (
+  <section class:list={['band', { soft: i % 2 === 1 }]}>
+    <div class="wrap">
+      <div class="ph photo band-photo reveal" data-label={p.place} style={`--img:url(${withBase(`team/${photos[i]}.jpg`)})`}></div>
+      <div class="band-info reveal">
+        <div>
+          <p class="tag">{String(i + 1).padStart(2, '0')} · {p.role}</p>
+          <h2>{p.name}</h2>
+          <p class="lead">{p.bio}</p>
+        </div>
+        <ul class="ach">{p.achievements.map((a) => <li>{a}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+))}
+
+<section class="band soft">
+  <div class="wrap">
+    <div class="ph photo band-photo short reveal" data-label={t.coach.label} style={`--img:url(${withBase('team/coach.jpg')})`}></div>
+    <div class="band-info single reveal">
+      <div>
+        <p class="tag">{t.coach.tag} · {t.coach.role}</p>
+        <h2>{t.coach.name}</h2>
+        <p class="lead">{t.coach.bio}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="tag">{t.together.tag}</p>
+    <h2>{t.together.title}</h2>
+    <div class="ph photo band-photo reveal" data-label={t.together.label} style={`--img:url(${withBase('team/equipo.jpg')})`}></div>
+  </div>
+</section>
+
+<section class="section dark center cta">
+  <div class="wrap">
+    <h2 class="display">{t.cta.title}</h2>
+    <div class="actions"><a class="btn" href={localePath(locale, 'patrocinio')}>{t.cta.button}</a></div>
+  </div>
+</section>

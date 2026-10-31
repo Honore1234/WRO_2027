@@ -1,0 +1,42 @@
+---
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+import { team } from '../config';
+import { getLocale, localeUrl, locales, defaultLocale, useTranslations, withBase } from '../i18n';
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+const { title = t.meta.title, description = t.meta.description, path = '' } = Astro.props;
+const canonical = localeUrl(locale, path);
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b2a4a" />
+    <script is:inline>document.documentElement.classList.add("js")</script>
+    <link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
+    <link rel="canonical" href={canonical} />
+    {locales.map((l) => <link rel="alternate" hreflang={l} href={localeUrl(l, path)} />)}
+    <link rel="alternate" hreflang="x-default" href={localeUrl(defaultLocale, path)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={team.name} />
+    <meta property="og:locale" content={t.meta.ogLocale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <!-- TODO: add og:image (1200x630) in /public once the logo exists -->
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <slot />
+    <script>
+      const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

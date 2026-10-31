@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Home from '../views/Home.astro';
+import Team from '../views/Team.astro';
+import Robots from '../views/Robots.astro';
+import Sponsors from '../views/Sponsors.astro';
+import Contact from '../views/Contact.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: undefined }, props: { view: 'home', path: '' } },
+    { params: { slug: 'equipo' }, props: { view: 'team', path: 'equipo' } },
+    { params: { slug: 'robots' }, props: { view: 'robots', path: 'robots' } },
+    { params: { slug: 'patrocinio' }, props: { view: 'sponsors', path: 'patrocinio' } },
+    { params: { slug: 'contacto' }, props: { view: 'contact', path: 'contacto' } },
+  ];
+}
+const { view, path } = Astro.props;
+---
+<BaseLayout path={path}>
+  <Nav current={path} />
+  <main>
+    {view === 'home' && <Home />}
+    {view === 'team' && <Team />}
+    {view === 'robots' && <Robots />}
+    {view === 'sponsors' && <Sponsors />}
+    {view === 'contact' && <Contact />}
+  </main>
+  <Footer />
+</BaseLayout>
