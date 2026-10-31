@@ -1,9 +1,0 @@
----
-import { team } from '../config';
-import { useTranslations } from '../i18n';
-const t = useTranslations(Astro.currentLocale).footer;
----
-<footer class="footer">
-  <span>© {new Date().getFullYear()} {team.name}. {t.rights}</span>
-  <span>{t.location}</span>
-</footer>
