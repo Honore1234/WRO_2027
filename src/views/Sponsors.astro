@@ -27,7 +27,7 @@ const w = all.why;
       {t.tiers.map((tier) => (
         <li class="reveal">
           <h3>{tier.name}</h3>
-          <p class="amount">{t.amountLabel}: {t.amount}</p>
+          <p class="amount">{tier.price}</p>
           <ul class="perks">{tier.perks.map((p) => <li>{p}</li>)}</ul>
         </li>
       ))}
