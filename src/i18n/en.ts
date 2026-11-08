@@ -124,7 +124,7 @@ const en: Dict = {
       { title: 'Real stories', text: 'Videos and reports of every step of the way, with verifiable results.' },
     ],
   },
-  coach: { tag: 'Coach', name: 'To be confirmed', role: 'Team advisor', bio: 'Description to be written: who the coach is, their experience and how they support the team.', label: 'Coach' },
+  coach: { tag: 'Coach', name: 'Jesus', role: 'Team advisor', bio: 'Description to be written: who the coach is, their experience and how they support the team.', label: 'Coach' },
   footer: { location: 'Mexico', rights: 'All rights reserved.' },
 };
 

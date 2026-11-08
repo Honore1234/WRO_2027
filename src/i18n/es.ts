@@ -123,7 +123,7 @@ const es = {
       { title: 'Historias reales', text: 'Videos y reportes de cada paso del camino, con resultados verificables.' },
     ],
   },
-  coach: { tag: 'Coach', name: 'Por confirmar', role: 'Asesor del equipo', bio: 'Descripción por escribir: quién es el coach, su experiencia y cómo acompaña al equipo.', label: 'Coach' },
+  coach: { tag: 'Coach', name: 'Jesús', role: 'Asesor del equipo', bio: 'Descripción por escribir: quién es el coach, su experiencia y cómo acompaña al equipo.', label: 'Coach' },
   footer: { location: 'México', rights: 'Todos los derechos reservados.' },
 };
 
