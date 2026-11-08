@@ -49,7 +49,7 @@ const en: Dict = {
     people: [
       { name: 'Honoré', role: 'Founder · Programming and vision', bio: 'Founded the team and leads the robot programming and vision: MaixCam, ESP32 and SPIKE Prime. Has competed at WRO Singapore, RoboCup and the UN AI for Good Youth Challenge.', place: 'Singapore', achievements: ['Top 41 worldwide · WRO Singapore', 'Top 10 worldwide · RoboCup', 'UN AI for Good Youth Challenge'] },
       { name: 'Santi', role: 'Role to be confirmed', bio: 'Description to be written: who they are, what they do on the team and what they love about robotics.', place: 'Türkiye', achievements: ['International competition in Türkiye', 'Achievements to be confirmed'] },
-      { name: 'Andrés', role: 'Role to be confirmed', bio: 'Description to be written: who they are, what they do on the team and what they love about robotics.', place: 'Singapore', achievements: ['International competition in Singapore', 'Achievements to be confirmed'] },
+      { name: 'Andrés and Jesús (coach)', role: 'Role to be confirmed', bio: 'Description to be written: who they are, what they do on the team and what they love about robotics.', place: 'Singapore', achievements: ['International competition in Singapore', 'Achievements to be confirmed'] },
     ],
   },
   robots: {

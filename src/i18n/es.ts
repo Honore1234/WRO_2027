@@ -48,7 +48,7 @@ const es = {
     people: [
       { name: 'Honoré', role: 'Fundador · Programación y visión', bio: 'Fundó el equipo y se encarga de la programación y la visión del robot: MaixCam, ESP32 y SPIKE Prime. Ha competido en WRO Singapur, RoboCup y el UN AI for Good Youth Challenge.', place: 'Singapur', achievements: ['Top 41 mundial · WRO Singapur', 'Top 10 mundial · RoboCup', 'UN AI for Good Youth Challenge'] },
       { name: 'Santi', role: 'Rol por confirmar', bio: 'Descripción por escribir: quién es, qué hace en el equipo y qué lo apasiona de la robótica.', place: 'Turquía', achievements: ['Competencia internacional en Turquía', 'Logros por confirmar'] },
-      { name: 'Andrés', role: 'Rol por confirmar', bio: 'Descripción por escribir: quién es, qué hace en el equipo y qué lo apasiona de la robótica.', place: 'Singapur', achievements: ['Competencia internacional en Singapur', 'Logros por confirmar'] },
+      { name: 'Andrés y Jesús (coach)', role: 'Rol por confirmar', bio: 'Descripción por escribir: quién es, qué hace en el equipo y qué lo apasiona de la robótica.', place: 'Singapur', achievements: ['Competencia internacional en Singapur', 'Logros por confirmar'] },
     ],
   },
   robots: {

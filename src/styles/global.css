@@ -124,6 +124,7 @@ h3 { font-size: .95rem; letter-spacing: .12em; margin-bottom: 10px; }
 /* Team bands (horizontal) */
 .band { padding: clamp(56px, 9vh, 100px) var(--pad); }
 .band-photo { min-height: clamp(280px, 48vw, 560px); width: 100%; }
+.band-photo.vertical { aspect-ratio: 3 / 4; min-height: 0; max-width: 320px; margin-inline: auto; }
 .band-info { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(24px, 5vw, 70px); margin-top: 34px; align-items: start; }
 .band-info h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
 .ach li { padding: 14px 0; border-top: 2px solid var(--line); font-weight: 600; }

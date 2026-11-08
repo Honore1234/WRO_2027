@@ -15,7 +15,7 @@ const photos = ['honore', 'santi', 'andres'];
 {t.team.people.map((p, i) => (
   <section class:list={['band', { soft: i % 2 === 1 }]}>
     <div class="wrap">
-      <div class="ph photo band-photo reveal" data-label={p.place} style={`--img:url(${withBase(`team/${photos[i]}.jpg`)})`}></div>
+      <div class:list={['ph', 'photo', 'band-photo', 'reveal', { vertical: photos[i] === 'andres' }]} data-label={p.place} style={`--img:url(${withBase(`team/${photos[i]}.jpg`)})`}></div>
       <div class="band-info reveal">
         <div>
           <p class="tag">{String(i + 1).padStart(2, '0')} · {p.role}</p>
@@ -27,19 +27,6 @@ const photos = ['honore', 'santi', 'andres'];
     </div>
   </section>
 ))}
-
-<section class="band soft">
-  <div class="wrap">
-    <div class="ph photo band-photo short reveal" data-label={t.coach.label} style={`--img:url(${withBase('team/coach.jpg')})`}></div>
-    <div class="band-info single reveal">
-      <div>
-        <p class="tag">{t.coach.tag} · {t.coach.role}</p>
-        <h2>{t.coach.name}</h2>
-        <p class="lead">{t.coach.bio}</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section">
   <div class="wrap">
