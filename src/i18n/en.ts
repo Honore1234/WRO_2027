@@ -47,9 +47,9 @@ const en: Dict = {
     title: 'Three members. One path.',
     lead: 'Each of us has already competed outside Mexico. These are our stories.',
     people: [
-      { name: 'Honoré', role: 'Founder · Programming and vision', bio: 'Founded the team and leads the robot programming and vision: MaixCam, ESP32 and SPIKE Prime. Has competed at WRO Singapore, RoboCup and the UN AI for Good Youth Challenge.', place: 'Singapore', achievements: ['Top 41 worldwide · WRO Singapore', 'Top 10 worldwide · RoboCup', 'UN AI for Good Youth Challenge'] },
-      { name: 'Santi', role: 'Role to be confirmed', bio: 'Description to be written: who they are, what they do on the team and what they love about robotics.', place: 'Türkiye', achievements: ['International competition in Türkiye', 'Achievements to be confirmed'] },
-      { name: 'Andrés and Jesús (coach)', role: 'Role to be confirmed', bio: 'Description to be written: who they are, what they do on the team and what they love about robotics.', place: 'Singapore', achievements: ['International competition in Singapore', 'Achievements to be confirmed'] },
+      { name: 'Honoré', role: 'Founder · Programming and vision', bio: 'Founded the team and leads the robot programming and vision: MaixCam, ESP32 and SPIKE Prime. Has competed at WRO Singapore, RoboCup and the UN AI for Good Youth Challenge.', place: 'Singapore', achievements: ['7th place in the Americas · WRO California 2026', 'Top 41 worldwide · WRO Singapore', 'Top 10 worldwide · RoboCup', 'UN AI for Good Youth Challenge'] },
+      { name: 'Santi', role: 'Role to be confirmed', bio: 'Pathbuilders team member. Has competed internationally in Türkiye.', place: 'Türkiye', achievements: ['International competition in Türkiye', '51st place · WRO Türkiye 2026'] },
+      { name: 'Andrés and Jesús (coach)', role: 'Role to be confirmed', bio: 'Pathbuilders team member. Has competed internationally in Singapore.', place: 'Singapore', achievements: ['International competition in Singapore', 'Achievements to be confirmed'] },
     ],
   },
   robots: {
