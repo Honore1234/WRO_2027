@@ -47,7 +47,7 @@ const es = {
     lead: 'Cada uno ya ha competido fuera de México. Estas son sus historias.',
     people: [
       { name: 'Honoré', role: 'Fundador · Programación y visión', bio: 'Fundó el equipo y se encarga de la programación y la visión del robot: MaixCam, ESP32 y SPIKE Prime. Ha competido en WRO Singapur, RoboCup y el UN AI for Good Youth Challenge.', place: 'Singapur', achievements: ['7.º lugar de las Américas · WRO California 2026', 'Top 41 mundial · WRO Singapur', 'Top 10 mundial · RoboCup', 'UN AI for Good Youth Challenge'] },
-      { name: 'Santi', role: 'Rol por confirmar', bio: 'Integrante del equipo Pathbuilders. Ha competido a nivel internacional en Turquía.', place: 'Turquía', achievements: ['Competencia internacional en Turquía', '51.º lugar · WRO Turquía 2024'] },
+      { name: 'Santi', role: 'Rol por confirmar', bio: 'Integrante del equipo Pathbuilders. Ha competido a nivel internacional en Turquía.', place: 'Turquía', achievements: ['Competencia internacional en Turquía', 'Top 50 · WRO Turquía 2024'] },
       { name: 'Andrés y Jesús (coach)', role: 'Rol por confirmar', bio: 'Integrante del equipo Pathbuilders. Ha competido a nivel internacional en Singapur.', place: 'Singapur', achievements: ['Competencia internacional en Singapur', 'Logros por confirmar'] },
     ],
   },
